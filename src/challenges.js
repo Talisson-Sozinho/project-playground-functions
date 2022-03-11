@@ -156,11 +156,15 @@ function decode(string) {
   }
   return stringDecoded;
 }
-console.log(decode('"h3 th2r2!"'));
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(arrayTech, name) {
+  if (arrayTech.length === 0) return 'Vazio!';
+  let arrayOfObjects = [];
+  for (let tech of arrayTech.sort()) {
+    arrayOfObjects.push({ tech, name });
+  }
+  return arrayOfObjects;
 }
 
 module.exports = {
