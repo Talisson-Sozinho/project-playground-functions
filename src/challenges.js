@@ -19,8 +19,10 @@ function splitSentence(setence) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(arrayOfString) {
+  let arrayConcatenated = '';
+  arrayConcatenated = `${arrayOfString[arrayOfString.length - 1]}, ${arrayOfString[0]}`;
+  return arrayConcatenated;
 }
 
 // Desafio 5
