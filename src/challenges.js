@@ -93,12 +93,70 @@ function fizzBuzz(arrayOfNumbers) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function isVogal(char) {
+  let vogais = ['a', 'e', 'i', 'o', 'u'];
+  for (let vogal of vogais) {
+    if (vogal === char) {
+      return true;
+    }
+  }
+  return false;
 }
-function decode() {
-  // seu código aqui
+
+function vogalForNumber(char) {
+  switch (char) {
+  case 'a':
+    return 1;
+  case 'e':
+    return 2;
+  case 'i':
+    return 3;
+  case 'o':
+    return 4;
+  default:
+    return 5;
+  }
 }
+
+function encode(string) {
+  let stringEncoded = '';
+  for (let char of string) {
+    if (isVogal(char)) {
+      stringEncoded += vogalForNumber(char);
+    } else {
+      stringEncoded += char;
+    }
+  }
+  return stringEncoded;
+}
+
+function numberForVogal(number) {
+  switch (number) {
+  case 1:
+    return 'a';
+  case 2:
+    return 'e';
+  case 3:
+    return 'i';
+  case 4:
+    return 'o';
+  default:
+    return 'u';
+  }
+}
+
+function decode(string) {
+  let stringDecoded = '';
+  for (let char of string) {
+    if (char > 0 && char < 6) {
+      stringDecoded += numberForVogal(Number(char));
+    } else {
+      stringDecoded += char;
+    }
+  }
+  return stringDecoded;
+}
+console.log(decode('"h3 th2r2!"'));
 
 // Desafio 10
 function techList() {
