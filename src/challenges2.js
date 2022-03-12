@@ -48,8 +48,47 @@ function generatePhoneNumber(arrayOfNumbers) {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheckSideLongerThanOtherTwo(lineA, lineB, lineC) {
+  if (lineA > lineB + lineC) {
+    return true;
+  }
+  if (lineB > lineC + lineA) {
+    return true;
+  }
+  if (lineC > lineA + lineB) {
+    return true;
+  }
+  return false;
+}
+
+function triangleCheckSideSmallerThanAbsoluteDiferenceLongerThanOtherTwo(lineA, lineB, lineC) {
+  if (lineA < Math.abs(lineB - lineC)) {
+    return true;
+  }
+  if (lineB < Math.abs(lineC - lineA)) {
+    return true;
+  }
+  if (lineC < Math.abs(lineB - lineA)) {
+    return true;
+  }
+  return false;
+}
+
+function triangleCheck(lineA, lineB, lineC) {
+  const conditionOne = triangleCheckSideLongerThanOtherTwo(
+    lineA,
+    lineB,
+    lineC,
+  );
+  const conditionTwo = triangleCheckSideSmallerThanAbsoluteDiferenceLongerThanOtherTwo(
+    lineA,
+    lineB,
+    lineC,
+  );
+  if (conditionOne && conditionTwo) {
+    return false;
+  }
+  return true;
 }
 
 // Desafio 13
