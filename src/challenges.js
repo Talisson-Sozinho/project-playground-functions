@@ -106,26 +106,50 @@ function catAndMouse(mouse, cat1, cat2) {
   return 'os gatos trombam e o rato foge';
 }
 
-// Desafio 8
+/* Desafio 8 */
+/* Função para saber se o número é divisível por 3, 5 ou os dois ao mesmo tempo.
+*  Entrada: (numero pra verificação)
+*  Saída: retorna 'fizz' para caso seja divisível por 3, 'buzz' por 5,
+*        'fizzBuzz' para caso seja divisível para os dois ao mesmo tempo
+*        'bug!' para caso não seja divisível por nenhum dos dois
+*/
 function isFizzOrBuzz(number) {
+  // Variável que será guardado a string para o retorno
   let wordForArray = '';
+  // caso o número seja divisível por 3
   if (number % 3 === 0) {
     wordForArray = 'fizz';
+    // e se for por 5 também, será concatenado com o Buzz
     if (number % 5 === 0) {
       wordForArray += 'Buzz';
     }
+  // caso o numero seja divisível por 50
   } else if (number % 5 === 0) {
     wordForArray = 'buzz';
+  // caso não seja divisível por nenhum dos dois
   } else {
     wordForArray = 'bug!';
   }
+  // retornando a string resposta
   return wordForArray;
 }
+/* Função para dado um array de número retornar um array dizendo se o elemento é
+* divisível por 3, 5 ou os dois ao mesmo tempo. Usando a regrado do fizzBuzz,
+* 'fizz' para caso seja por somente por 3, 'buzz' para caso seja somente por 5,
+* 'fizzBuzz' para caso seja pelos dois ao mesmo tempo e 'bug!' para nenhum dos dois.
+*  Entrada: (Array de números)
+*  Saída: retorna o um array com as respostas
+*/
 function fizzBuzz(arrayOfNumbers) {
-  let arrayFizzBuzz = [];
+  // Novo array que será colocado as respostas
+  const arrayFizzBuzz = [];
+  // Estrutura de repetição para percorrer todo o array que foi passado como parâmetro
   for (let number of arrayOfNumbers) {
+    // Usando a função "isFizzOrBuzz" para ir adicionando a resposta de cada elemento no
+    // array de respostas
     arrayFizzBuzz.push(isFizzOrBuzz(number));
   }
+  // Retornando o array de respostas
   return arrayFizzBuzz;
 }
 
