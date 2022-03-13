@@ -9,9 +9,15 @@ function compareTrue(parameterBoolean1, parameterBoolean2) {
   return parameterBoolean1 && parameterBoolean2;
 }
 
-// Desafio 2
+/* Desafio 2 */
+/* Função para calcular a Área de um triângulo.
+*  Entrada: (Número da base, Número da altura)
+*  Saída: retorna a área do triângulo
+*/
 function calcArea(base, height) {
-  let area = (base * height) / 2;
+  // Cálculo da área de um triângulo
+  const area = (base * height) / 2;
+  // retornando o resultado do cálculo
   return area;
 }
 
