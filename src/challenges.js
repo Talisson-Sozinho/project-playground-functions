@@ -1,9 +1,12 @@
-// Desafio 1
+/* Desafio 1 */
+/* Função para comparar duas entradas boolean.
+*  Entrada: (primeiro parâmetro boolean, segundo parâmetro boolean)
+*  Saída: retorna true caso os dois parâmetros sejam true ou retorna false caso algum seja false
+*/
 function compareTrue(parameterBoolean1, parameterBoolean2) {
-  if (parameterBoolean1 && parameterBoolean2) {
-    return true;
-  }
-  return false;
+  // Retornando o resultado da comparação lógica pois retornará false caso algum seja false,
+  // se não retorna true.
+  return parameterBoolean1 && parameterBoolean2;
 }
 
 // Desafio 2
