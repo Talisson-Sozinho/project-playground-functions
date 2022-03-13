@@ -35,10 +35,15 @@ function splitSentence(setence) {
   return arrayOfWords;
 }
 
-// Desafio 4
+/* Desafio 4 */
+/* Função para retornar uma string com a última palavra do array e a do primeiro respectivamente
+*  Entrada: (array de strings)
+*  Saída: retorna a string com as duas palavras
+*/
 function concatName(arrayOfString) {
-  let arrayConcatenated = '';
-  arrayConcatenated = `${arrayOfString[arrayOfString.length - 1]}, ${arrayOfString[0]}`;
+  // Constante que receberá a string concatenada da última posição do array com a primeira respectivamente
+  const arrayConcatenated = `${arrayOfString[arrayOfString.length - 1]}, ${arrayOfString[0]}`;
+  // Retornando a constante com o valor
   return arrayConcatenated;
 }
 
