@@ -21,9 +21,17 @@ function calcArea(base, height) {
   return area;
 }
 
-// Desafio 3
+/* Desafio 3 */
+/* Função para dado uma frase, irá separar as palavras e colocar em um array de palavras
+*  Entrada: (Frase no formato de string)
+*  Saída: retorna um array com cada posição do array, uma palavra da frase
+*/
 function splitSentence(setence) {
-  let arrayOfWords = setence.split(' ');
+  // Usando o método de string que irar colocar em cada posição de um array toda a parte da string
+  // que está entre o parâmetro que foi passado. No caso dessa função que vai separar por palavra,
+  // é a cada espaço
+  const arrayOfWords = setence.split(' ');
+  // Retorna o array com as palavras que foram separadas em um array
   return arrayOfWords;
 }
 
