@@ -85,23 +85,24 @@ function highestCount(arrayOfNumbers) {
   return higherNumber.repeated; // retorna a quantidade de repetição do maior número
 }
 
-// Desafio 7
+/* Desafio 7 */
+/* Função para verificar qual gato chegará primeiro em um rato
+*  Entrada: (posição do rato, posição do gato 1, posição do gato 2)
+*  Saída: retorna uma string com o nome de qual vai ganhar ou se os gatos irão se trombar
+*/
 function catAndMouse(mouse, cat1, cat2) {
-  let differenceMouseCat1 = mouse - cat1;
-  let differenceMouseCat2 = mouse - cat2;
-  if (differenceMouseCat1 < 0) {
-    differenceMouseCat1 = -differenceMouseCat1;
-  }
-  if (differenceMouseCat2 < 0) {
-    differenceMouseCat2 = -differenceMouseCat2;
-  }
-
+  // Inicializando constantes com o valor da distancia dos gatos para o rato
+  // o método .abs foi usado para deixar o valor da subtração positiva
+  const differenceMouseCat1 = Math.abs(mouse - cat1);
+  const differenceMouseCat2 = Math.abs(mouse - cat2);
+  // condições para saber qual dos dois chegam primeiro
   if (differenceMouseCat1 < differenceMouseCat2) {
     return 'cat1';
   }
   if (differenceMouseCat1 > differenceMouseCat2) {
     return 'cat2';
   }
+  // caso não tenha retornado nenhum dos dois gatos é porque eles estavam na mesma posição e ele se trombam
   return 'os gatos trombam e o rato foge';
 }
 
