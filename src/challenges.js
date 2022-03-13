@@ -47,11 +47,16 @@ function concatName(arrayOfString) {
   return arrayConcatenated;
 }
 
-// Desafio 5
+/* Desafio 5 */
+/* Função para contar quantos pontos um time fez em um campeonato
+*  Entrada: (quantidades de vitória, quantidades de empate)
+*  Saída: retorna a somatória de pontos
+*/
 function footballPoints(wins, ties) {
-  let sumOfPoints = 0;
-  sumOfPoints = wins * 3 + ties;
-  return sumOfPoints;
+  // cálculo dos pontos e colocando na constante para ser retornado
+  const points = wins * 3 + ties;
+  // retornando a soma de pontos
+  return points;
 }
 
 // Desafio 6
