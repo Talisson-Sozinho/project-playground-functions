@@ -59,21 +59,30 @@ function footballPoints(wins, ties) {
   return points;
 }
 
-// Desafio 6
+/* Desafio 6 */
+/* Função para retornar quantas vezes se repetiu o maior número
+*  Entrada: (array de números)
+*  Saída: Números de vezes que o maior número se repetiu
+*/
 function highestCount(arrayOfNumbers) {
-  let highestNumber = -Infinity;
-  let countOfHighNumber = 0;
-
+  // Objeto para guardar o maior número e quantas vezes ele se repetiu
+  const higherNumber = {
+    number: -Infinity,
+    repeated: 0,
+  };
+  // Estrutura de repetição para percorrer todo o array
   for (let number of arrayOfNumbers) {
-    if (number > highestNumber) {
-      highestNumber = number;
-      countOfHighNumber = 0;
+    // Caso o número atual seja maior do que o que era considerado maior antes, irá fazer a substituição
+    if (number > higherNumber.number) {
+      higherNumber.number = number;
+      higherNumber.repeated = 0;// inicializar em 0 pois vai adicionar no if posterior
     }
-    if (highestNumber === number) {
-      countOfHighNumber += 1;
+    // Caso o número atual seja igual ao que era considerado o maior antes, irá adicionar 1 na quantidade de repetição
+    if (higherNumber.number === number) {
+      higherNumber.repeated += 1;
     }
   }
-  return countOfHighNumber;
+  return higherNumber.repeated; // retorna a quantidade de repetição do maior número
 }
 
 // Desafio 7
