@@ -153,69 +153,72 @@ function fizzBuzz(arrayOfNumbers) {
   return arrayFizzBuzz;
 }
 
-// Desafio 9
+/* Desafio 9 */
+/* Função para dado um caractere, retornar se é vogal ou não.
+*  Entrada: (string de 1 caractere)
+*  Saída: retorna true para caso seja vogal e false se não */
 function isVogal(char) {
-  let vogais = ['a', 'e', 'i', 'o', 'u'];
-  for (let vogal of vogais) {
-    if (vogal === char) {
+  const vogais = ['a', 'e', 'i', 'o', 'u']; // Array com todas as vogais
+  for (let vogal of vogais) { // Estrutura de repetição para percorrer o array de vogais
+    if (vogal === char) { // verificando se o caractere de entrada tem é a vogal atual, se for já retorna true
       return true;
     }
   }
-  return false;
+  return false; // se passou em todo o array e não retornou, é porque não é uma vogal
 }
-
+/* Função para dado uma vogal retornar um número correspondente.
+*  Entrada: (string da vogal)
+*  Saída: retorna o número correspondente da vogal */
 function vogalForNumber(char) {
-  switch (char) {
-  case 'a':
-    return 1;
-  case 'e':
-    return 2;
-  case 'i':
-    return 3;
-  case 'o':
-    return 4;
-  default:
-    return 5;
-  }
+  const vogaisNumber = { // objeto com cada vogal sendo uma chave e o valor seu número correspondente
+    a: 1,
+    e: 2,
+    i: 3,
+    o: 4,
+    u: 5,
+  };
+  return vogaisNumber[char]; // Retorna o valor correspondente a chave
 }
-
+/* Função para "encriptar" um frase trocando suas vogais por números
+*  Entrada: (string da sentença )
+*  Saída: string da frase encriptada */
 function encode(string) {
-  let stringEncoded = '';
-  for (let char of string) {
-    if (isVogal(char)) {
-      stringEncoded += vogalForNumber(char);
+  let stringEncoded = ''; // variável auxiliar que será colocado a string encriptada
+  for (let char of string) { // Estrutura de repetição para percorrer a string normal
+    if (isVogal(char)) { // verificando se estamos em uma vogal
+      stringEncoded += vogalForNumber(char); // chamando a função parar dizer o número correspondente a vogal
     } else {
-      stringEncoded += char;
+      stringEncoded += char; // se não for irá apenas colocar a não vogal na string auxiliar
     }
   }
-  return stringEncoded;
+  return stringEncoded; // retornando a variável que contém a sentença encriptada
 }
-
+/* Função para dado um número retornar uma vogal correspondente.
+*  Entrada: (número da vogal) tem que estar entre 1 e 5
+*  Saída: retorna a vogal correspondente ao número */
 function numberForVogal(number) {
-  switch (number) {
-  case 1:
-    return 'a';
-  case 2:
-    return 'e';
-  case 3:
-    return 'i';
-  case 4:
-    return 'o';
-  default:
-    return 'u';
-  }
+  const numbersVogal = { // objeto com sua chave sendo um número e valor com sua vogal correspondente
+    1: 'a',
+    2: 'e',
+    3: 'i',
+    4: 'o',
+    5: 'u',
+  };
+  return numbersVogal[number]; // retornando a vogal correspondente ao número
 }
-
+/* Função para decodificar uma string
+*  Entrada: (string encriptada)
+*  Saída: string decodificada */
 function decode(string) {
-  let stringDecoded = '';
-  for (let char of string) {
-    if (char > 0 && char < 6) {
-      stringDecoded += numberForVogal(Number(char));
+  let stringDecoded = ''; // variável auxiliar que será colocado a string decodificada
+  for (let char of string) { // Estrutura de repetição para percorrer a string decodificada
+    if (char > 0 && char < 6) { // verificando se estamos em um número
+      stringDecoded += numberForVogal(char); // chamando a função parar dizer a vogal correspondente ao número
     } else {
-      stringDecoded += char;
+      stringDecoded += char; // se não for irá apenas colocar a letra na string auxiliar
     }
   }
-  return stringDecoded;
+  return stringDecoded; // retornando variável contém a sentença decodificada
 }
 
 // Desafio 10
