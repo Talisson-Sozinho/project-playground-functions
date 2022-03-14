@@ -220,15 +220,18 @@ function decode(string) {
   }
   return stringDecoded; // retornando variável contém a sentença decodificada
 }
-
-// Desafio 10
+/* Desafio 10 */
+/* Função para retornar um array ordenado de objetos dado um array e um nome
+*  Entrada: (array, nome)
+*  Saída: Array de objeto com o conteúdo do e o nome
+*/
 function techList(arrayTech, name) {
-  if (arrayTech.length === 0) return 'Vazio!';
-  let arrayOfObjects = [];
-  for (let tech of arrayTech.sort()) {
-    arrayOfObjects.push({ tech, name });
+  if (arrayTech.length === 0) return 'Vazio!'; // caso o array seja vazio retorna vazio
+  const arrayOfObjects = [];
+  for (let tech of arrayTech.sort()) { // Estrutura de repetição para percorrer o array
+    arrayOfObjects.push({ tech, name }); // Colocando o novo objeto no array
   }
-  return arrayOfObjects;
+  return arrayOfObjects; // retornando o array com os objetos
 }
 
 module.exports = {
