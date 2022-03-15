@@ -146,15 +146,23 @@ function triangleCheck(lineA, lineB, lineC) {
   return true;
 }
 
-// Desafio 13
+/* Desafio 13 */
+/* Função para verificar a quantidade de água um pessoa tem que beber dado um
+*  número de bebidas que tomou anteriormente.
+*  Entrada: (string com o texto das bebidas)
+*  Saída: uma frase dizendo o número de copos de água que terá que beber
+*/
 function hydrate(string) {
+  // variável que sera guardada a quantidade de copos de água
   let water = 0;
+  // percorrendo o array que será gerado após gerar a string em um array de palavras
   for (let word of string.split(' ')) {
+    // caso tenha um número entre 0 e 10 soma o valor numérico ao número de copos de água
     if (word > 0 && word < 10) {
-      console.log(word);
       water += Number(word);
     }
   }
+  // para organizar a semântica do retorno
   if (water > 1) {
     return `${water} copos de água`;
   }
