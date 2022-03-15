@@ -80,8 +80,14 @@ function generatePhoneNumber(arrayOfNumbers) {
   return arrayToPhoneNumber(arrayOfNumbers);
 }
 
-// Desafio 12
+/* Desafio 12 */
+/* Função para verificar se tem algum lado maior que a soma dos outros dois lados.
+*  Entrada: (valor numérico do lado 1, valor numérico do lado 2, valor numérico do lado 3)
+*  Saída: retorna true caso tenha algum lado seja maior que a soma dos outros dois lados,
+*        e false caso contrário
+*/
 function triangleCheckSideLongerThanOtherTwo(lineA, lineB, lineC) {
+  // casos que algum lado seja maior que a soma dos outros dois lados
   if (lineA > lineB + lineC) {
     return true;
   }
@@ -91,10 +97,17 @@ function triangleCheckSideLongerThanOtherTwo(lineA, lineB, lineC) {
   if (lineC > lineA + lineB) {
     return true;
   }
+  // retorna false caso seja menor ou igual a soma dos outros dois lados
   return false;
 }
 
+/* Função para verificar se tem algum lado menor que a diferença dos outros dois lados
+*  Entrada: (valor numérico do lado 1, valor numérico do lado 2, valor numérico do lado 3)
+*  Saída: retorna true caso tenha algum lado seja menos que a diferença dos outros dois lados,
+*        e false caso contrário
+*/
 function triangleCheckSideSmallerThanAbsoluteDiferenceLongerThanOtherTwo(lineA, lineB, lineC) {
+  // casos em que tenha algum lado que seja menor que o valor absoluto dos outros dois lados
   if (lineA < Math.abs(lineB - lineC)) {
     return true;
   }
@@ -104,23 +117,32 @@ function triangleCheckSideSmallerThanAbsoluteDiferenceLongerThanOtherTwo(lineA, 
   if (lineC < Math.abs(lineB - lineA)) {
     return true;
   }
+  // retorna false caso seja maior ou igual a diferença do outros dois lados
   return false;
 }
 
+/* Função para retornar se os valores passados por parâmetro forma um triângulo válido.
+*  Entrada: (Valor 1, valor 2, valor 3)
+*  Saída: retorna true para caso forme um triângulo válido e false para caso não
+*/
 function triangleCheck(lineA, lineB, lineC) {
+  // Salvando o resultado da função que verifica se tem algum lado maior que os outros dois
   const conditionOne = triangleCheckSideLongerThanOtherTwo(
     lineA,
     lineB,
     lineC,
   );
+  // Salvando o resultado da função que verifica se tem alguma lado menor que a diferença dos outros dois lados
   const conditionTwo = triangleCheckSideSmallerThanAbsoluteDiferenceLongerThanOtherTwo(
     lineA,
     lineB,
     lineC,
   );
+  // caso as duas função retorne true, o triangulo não existe
   if (conditionOne && conditionTwo) {
     return false;
   }
+  // true para caso o triângulo exista
   return true;
 }
 
