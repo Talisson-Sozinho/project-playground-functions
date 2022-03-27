@@ -1,5 +1,9 @@
 # Boas vindas ao repositório do Projeto Playground Functions!
   Aqui está um projeto que desenvolvi ao fim do bloco 04 do curso da [Trybe](https://www.betrybe.com/).
+  
+# Avaliação feita pela trybe
+
+<img src='https://user-images.githubusercontent.com/79944385/160265373-f4c253e4-74b8-4ecb-ab4b-c418f85900cc.png'>
 
 # Habilidades usadas
 
